@@ -21,7 +21,7 @@
   //header-center: true,
 
   // 如果不需要头像，则将下面三行的参数注释或删除
-  photograph: "profile.jpg",
+  photograph: bytes(read("./img/hot-commits.png", encoding: none)),
   photograph-width: 10em,
   gutter-width: 2em,
 )[
@@ -86,7 +86,7 @@
   
   Python, Django, Nim, JavaScript, C/C++, gdb, vim
   
-  TypeScript, Node.js, Java, Matlab
+  TypeScript, Node.js, Deno, Java, Matlab
 
   Golang, Rust, Vue, Android
 ]
@@ -132,6 +132,10 @@ OS系统工具迁移
 
 == #fa-github 个人项目经历
 
+自2023年以来，维护 #link(gh-pre+"nimpylib/", "nimpylib")，并创建了大小几十个下属仓库，极大扩充了nim语言面向Python开发者的生态
+
+- 大部分仓库都兼顾了JavaScript后端
+
 === #my-icon("icons/nimpylib.png") nimpylib
 
 主项目网站 https://nimpylib.org/
@@ -156,8 +160,60 @@ OS系统工具迁移
 将 Python 的常用语法迁移到 Nim 语言
 
 - 基于语法树重写的语法糖实现(`def`, `with`, `class` 等)
+- 基于变量查找实现无声明变量定义
 
 ]
+
+#item-under-gh("Nim实现的Python解释器",
+  "nimpylib/npython",
+  "个人项目",
+  [#DT(2025, 7) - 至今],
+  [ Nim, Python ]
+)[
+
+
+纯Nim从头实现的Python解释器
+
+- 单文件executable
+- 除了Native后端支持外，支持Nodejs、Deno、Browser等多种Js后端
+- 截止2026-05，已支持 90% 以上 的builtins(内建)函数
+- 支持包括词法作用域、迭代器、修饰器、推导表达式在内的大量Python特性
+]
+
+== #fa-github 开源项目参与
+
+累计对开源项目提交80个PR，总体 PR 合并率 80%
+
+- 向 #repo("nim-lang/Nim") 累计提交 34 个 issue、47 个 PR，主要集中在标准库解析与运行时缺陷修复
+- 向 #repo("subsetpark/nim-gmp") 等仓库提交围绕 Nim2 兼容与类型修复的PR。
+- 另有对 #repo("python/cpython")、#repo("mermaid-js/mermaid")、#repo("nim-lang/nimble") 等项目的少量贡献。
+
+
+
+#item-under-gh("Nim parseopt 缺陷修复",
+  "nim-lang/Nim",
+  "Issue + 合并 PR",
+  DT(2026, 4),
+  [ Nim ])[
+提交并复现 #issue(25738)，随后修复 #PR(25739) 已合并，解决 `shortNoVal` 下解析 "`-`" 触发 IndexDefect。
+]
+
+#item-under-gh("parseFloat -NaN 符号修复",
+  "nim-lang/Nim",
+  "合并 PR",
+  DT(2026, 3),
+  [ Nim ])[
+修复 `parseFloat` 丢失 `-NaN` 符号的问题（#PR(25598)，已合并）。
+]
+
+#item-under-gh("Typst 包提交：sprintf",
+  "typst/packages",
+  "合并 PR",
+  DT(2026, 5),
+  [ Typst ])[
+提交并发布 `sprintf` 包，提供 printf 风格的字符串/映射格式化（#PR(4779)，已合并）。
+]
+
 
 == #fa-award 获奖情况
 

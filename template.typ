@@ -36,13 +36,26 @@
 #let fa-debian = my-icon("icons/fa-debian.svg")
 #let fa-archlinux = my-icon("icons/fa-archlinux.svg")
 
+#let gh-pre = "https://github.com/"
+#let repo(id) = link(gh-pre + id, id)
+
+
+#let gh-id = state("gh-id", "")
+#let _pr-or-issue-of(pull-issue, pr-issue, num) = {
+  let snum = str(num)
+  context link(gh-pre+gh-id.get()+pull-issue+snum, pr-issue + " " + snum)
+}
+#let issue = _pr-or-issue-of.with("/issues/", "issue")
+#let PR = _pr-or-issue-of.with("/pull/", "PR")
+
 #let item-under-gh(name, git-id, classification,
   dt,
   techs,
   contents,
   append-git-id: true,
 ) = [
-  #let git-url = "https://github.com/" + git-id
+  #context gh-id.update(git-id)
+  #let git-url = gh-pre + git-id
   #item(
     link(
       git-url,
