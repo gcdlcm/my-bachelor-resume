@@ -132,7 +132,7 @@ OS系统工具迁移
 
 == #fa-github 个人项目经历
 
-自2023年以来，维护 #link(gh-pre+"nimpylib/", "nimpylib")，并创建了大小几十个下属仓库，极大扩充了nim语言面向Python开发者的生态
+自2023年以来，维护/开发 #link(gh-pre+"nimpylib/", "nimpylib")，并创建了大小几十个下属仓库，极大扩充了nim语言面向Python开发者的生态
 
 - 大部分仓库都兼顾了JavaScript后端
 
@@ -148,7 +148,7 @@ OS系统工具迁移
 )[
 将 Python 标准库中的常用模块迁移到 Nim 语言，提升性能和可维护性
 
-- 实现了 `os`, `sys`, 等核心模块以及`math`, `datetime`等常用模块
+- 实现了 `os`, `sys`, 等核心模块和`math`, `datetime`等几十个常用模块
 ]
 
 #item-under-gh("Python语法糖的nim迁移",
@@ -180,7 +180,7 @@ OS系统工具迁移
 - 支持包括词法作用域、迭代器、修饰器、推导表达式在内的大量Python特性
 ]
 
-== #fa-github 开源项目参与
+== #box(rect("FOSS", radius: 8pt)) 开源项目参与
 
 累计对开源项目提交80个PR，总体 PR 合并率 80%
 
@@ -206,6 +206,12 @@ OS系统工具迁移
 修复 `parseFloat` 丢失 `-NaN` 符号的问题（#PR(25598)，已合并）。
 ]
 
+
+#pagebreak()
+
+
+== #my-icon("icons/npm.svg") 发布开源第三方库
+
 #item-under-gh("Typst 包提交：sprintf",
   "typst/packages",
   "合并 PR",
@@ -214,6 +220,24 @@ OS系统工具迁移
 提交并发布 `sprintf` 包，提供 printf 风格的字符串/映射格式化（#PR(4779)，已合并）。
 ]
 
+#item-under-gh("npm 包提交：catlyrics",
+  "litlighilit/catlyrics",
+  "publish",
+  DT(2025, 12),
+  [ JavaScript ])[
+发布 `catlyrics` 包，提供命令行下的`歌词查找`功能及附加功能
+]
+
+#item-under-gh("nimble 包提交：uctl, ...",
+  "litlighilit/uctl",
+  "合并 PR",
+  DT(2026, 5),
+  [ Nim ])[
+- uctl: 通过命令行提供对Linux下电量查询、屏幕亮度控制等功能
+- ghsh: 如在sh(shell/bash)内访问本地文件系统一样访问github仓库内容
+- daily_run: 以类NimScript的脚本方式设置定时任务
+- ...
+]
 
 == #fa-award 获奖情况
 
