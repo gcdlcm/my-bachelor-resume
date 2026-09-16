@@ -134,8 +134,6 @@ OS系统工具迁移
 
 自2023年以来，维护/开发 #link(gh-pre+"nimpylib/", "nimpylib")，并创建了大小几十个下属仓库，极大扩充了nim语言面向Python开发者的生态
 
-- 大部分仓库都兼顾了JavaScript后端
-
 === #my-icon("icons/nimpylib.png") nimpylib
 
 主项目网站 https://nimpylib.org/
@@ -174,9 +172,7 @@ OS系统工具迁移
 
 纯Nim从头实现的Python解释器
 
-- 单文件executable
 - 除了Native后端支持外，支持Nodejs、Deno、Browser等多种Js后端
-- 截止2026-05，已支持 90% 以上 的builtins(内建)函数
 - 支持包括词法作用域、迭代器、修饰器、推导表达式在内的大量Python特性
 ]
 
