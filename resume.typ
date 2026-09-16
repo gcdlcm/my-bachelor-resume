@@ -180,6 +180,12 @@ OS系统工具迁移
 - 支持包括词法作用域、迭代器、修饰器、推导表达式在内的大量Python特性
 ]
 
+// allow `--input ignores=xxx,...`
+#let ignores = sys.inputs.at("ignores", default: "").split(",")
+
+#let whenNotIgnore(sym, body) = if ignores.contains(sym) {} else {body}
+
+#whenNotIgnore("foss")[
 == 开源项目参与 #box(rect(text("FOSS", size: 0.4em), radius: 6pt, height: 0.8em), height: 0.5em)
 
 累计对开源项目提交80个PR，总体 PR 合并率 80%
@@ -238,7 +244,7 @@ OS系统工具迁移
 - daily_run: 以类NimScript的脚本方式设置定时任务
 - ...
 ]
-
+] // foss
 
 == #fa-github github 基础设施使用
 
