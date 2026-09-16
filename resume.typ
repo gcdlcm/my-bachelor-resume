@@ -21,7 +21,7 @@
   //header-center: true,
 
   // 如果不需要头像，则将下面三行的参数注释或删除
-  photograph: bytes(read("./img/hot-commits.png", encoding: none)),
+  photograph: myInfo.photo-bytes,
   photograph-width: 10em,
   gutter-width: 2em,
 )[
